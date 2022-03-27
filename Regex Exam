@@ -1,0 +1,14 @@
+public static void main(String[] args) { 
+	String phrase = " Word1 word2, word3."; 
+	//in my case its not important if its lover or upercase letters 
+	phrase = phrase.toLowerCase(); 
+	//using this for polish language. “+” - means one or more characters 
+	String regex = "[a-z0-9ąćęłńóśźż]+"; 
+	Matcher m = Pattern.compile(regex).matcher(phrase); 
+	while(m.find()) System.out.println(m.group()); 
+} 
+ 
+result: 
+word1 
+word2 
+word3 
